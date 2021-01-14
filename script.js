@@ -61,9 +61,20 @@ function foo2(){//adding folder
     let addfolder = document.getElementById('addfolder');
     addfolder.addEventListener('click', function(){
         console.log(folders);
-        let Folder = Object.create(newFolder);
-        Folder.name = 'folder' + folders.length;
-        folders.push(Folder);
+        let newfold = new Object();
+        newfold.name = 'folder' + folders.length;
+        newfold.notes = {};
+        newfold.addNote  = function(noteName, noteText){
+            this.notes[Object.keys(this.notes).length + 1] = {
+                name: noteName,
+                text: noteText
+            }
+        }
+        folders.push(newfold);
+
+
+
+
         
         let newfolder = document.createElement('div');
         newfolder.className = 'folder-case';
@@ -273,17 +284,6 @@ const folder2 = {
     }
 };
 
-const newFolder = {
-    name : '',
-    notes: {
-    },
-    addNote : function(noteName, noteText){
-        this.notes[Object.keys(this.notes).length + 1] = {
-            name: noteName,
-            text: noteText
-        }
-    }
-};
 
 const folders = [folder, folder1, folder2];
 
