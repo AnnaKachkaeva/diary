@@ -176,29 +176,9 @@ function writeNote(){
 
 
 
+const folders = [];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 const folder = {
     name : 'folder',
     notes: {
@@ -282,10 +262,8 @@ const folder2 = {
             text: noteText
         }
     }
-};
+};*/
 
-
-const folders = [folder, folder1, folder2];
 
 /*const reportWindowSize = function(){
     let body = document.getElementById('body');
