@@ -17,6 +17,7 @@ body{
     display: grid;
     grid-template-rows: 30px auto;
 }
+
 .header{
     padding-top: 2px;
     background-color:white;
