@@ -10,6 +10,7 @@ function foo(){
     }
 }
 
+
 function addFolder(foldername){
     let newfolder = document.createElement('div');
     newfolder.className = 'folder-case';
