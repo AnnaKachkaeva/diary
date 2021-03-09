@@ -49,22 +49,22 @@ body{
 }
 .folders{
     text-align: center;
-    border-right: 1px solid pink;
+    border-right: 1px solid black;
     overflow-y: hidden;
-    position: relative; 
+    position: relative;
     display: grid;
-    grid-template-rows: auto 30px;
+    grid-template-rows: auto 1px;
 }
 .folder-cases{
     overflow-y: scroll;
 }
 .folder-case{
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
     text-align: center;
     height: 25px;
     line-height: 25px;
-    border-bottom: 1px dashed gray;
+    border-bottom: 1px solid gray;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -74,16 +74,16 @@ body{
 }
 .addfolder{
     background-color: rgb(255, 255, 255);
-    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
     width: 100%;
-    padding-top: 4px;
-    border-bottom-left-radius: 6px;
+    padding-top: -1px;
+    border-bottom-left-radius: 0px;
 }
 .notes{
     text-align: center;
-    border-right: 1px solid pink;
+    border-right: 1px solid black;
     overflow: auto;
-    position: relative; 
+    position: relative;
 }
 .notetext{
     text-align: center;
@@ -91,16 +91,55 @@ body{
     position: relative;
 }
 .note-case{
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
     text-align: center;
     height: 25px;
     line-height: 25px;
-    border-bottom: 1px dashed gray;
+    border-bottom: 1px solid gray;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+}
+
+.textarea {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textarea;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    padding: 2px;
+}
+.textinput {
+    font: inherit;
+    width: 99%;
+    margin-left: 1px;
+    resize: none;
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    background: 0 0;
 }

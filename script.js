@@ -27,7 +27,7 @@ function addnotes(folder){
 
 var clickedNote;
 function showText(){//track clicks on notes
-    document.addEventListener('dblclick', function (e) {
+    document.addEventListener('click', function (e) {
         if(e.target.className=='note-case'){
             if(clickedNote){
                 clickedNote.style.background = 'white';
@@ -41,12 +41,14 @@ function showText(){//track clicks on notes
                     let selectedFolder = folders[i];
                     for (const property in folders[i].notes) {
                         if(selectedFolder.notes[property].name == clickedNote.textContent){
-                            let text = document.createElement('div');
+                            let textar = document.getElementById('notetext').createElement('textarea')
+                            textar.className = "textarea";
+                            document.getElementById('notetext').appendChild(textar);
                             text.className = 'notetext';
-                            text.innerHTML = selectedFolder.notes[property].text;
+                            text.innerHTML = selectedFolder.notes[property].appendChild(textar);
                             document.getElementById('notetext').appendChild(text);
                         }
-                        
+
                     }
                 }
             }
@@ -57,17 +59,18 @@ function showText(){//track clicks on notes
 }
 
 function foo2(){//adding folder
-    
+
     let addfolder = document.getElementById('addfolder');
     addfolder.addEventListener('click', function(){
         console.log(folders);
         let newfold = new Object();
         newfold.name = 'folder' + folders.length;
         newfold.notes = {};
-        newfold.addNote  = function(noteName, noteText){
+
+        newfold.addNote  = function(noteName){
             this.notes[Object.keys(this.notes).length + 1] = {
                 name: noteName,
-                text: noteText
+                text: ''
             }
         }
         folders.push(newfold);
@@ -75,12 +78,12 @@ function foo2(){//adding folder
 
 
 
-        
+
         let newfolder = document.createElement('div');
         newfolder.className = 'folder-case';
         newfolder.textContent = 'folder' + (folders.length - 1);
         document.getElementById('folder-cases').appendChild(newfolder);
-        
+
         folders[folders.length-1].name = newfolder.textContent;
     });
 }
@@ -88,7 +91,7 @@ function foo2(){//adding folder
 
 var clicked;
 function foo3(){//track clicks on folders
-    document.addEventListener('dblclick', function (e) {
+    document.addEventListener('click', function (e) {
         if(e.target.className=='folder-case'){
             if(clicked){
                 clicked.style.background = 'white';
@@ -125,14 +128,14 @@ function del(){
                                 delete folders[i].notes[property];
                                 document.getElementById('notetext').innerHTML = '';
                             }
-                           
+
                         }
                     }
             }
         }
-        
 
-    }   
+
+    }
     if(clicked.style.background == 'rgb(219, 218, 218) none repeat scroll 0% 0%'){
         clicked.remove();
         document.getElementById('notes').innerHTML = '';
@@ -145,38 +148,46 @@ function del(){
             }
         }
     }
-    
+
 }
 
 
 function writeNote(){
-    
+
     for(let i = 0; i<folders.length; i++){
-        
+
         if(clicked.textContent == folders[i].name){
             console.log(folders[i]);
-            
+
             let notename = `f${i}-note${Object.keys(folders[i].notes).length}`;
-            folders[i].addNote(notename,'note text');
-            
+            folders[i].addNote(notename);
+
             let newnote = document.createElement('div');
             newnote.className = 'note-case';
             newnote.textContent = notename;
             document.getElementById('notes').appendChild(newnote);
-           
+
         }
     }
 }
 
 
+/*function addtext(){
+  for(var i = 0; i<folders.notes.length; i++){
 
-
+      if(clicked.textContent == folders.notes[i].name){
+          console.log(folders.notes[i]);
+          var text = document.getElementById('notetext').createElement("textarea");
+          n.value=e,n.setAttribute("readonly",""),n.style.position="fixed",document.getElementById('notetext').appendChild(n)
+        }
+} */
 
 
 
 
 
 const folders = [];
+const notes = [];
 
 /*
 const folder = {
