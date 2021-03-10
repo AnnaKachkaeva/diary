@@ -10,7 +10,7 @@
 <body onload="foo(), foo2(), foo3(), showText()" id="body">
     <div class="main-field" id='main-field'>
         <div class="header"> 
-            <div class="upper-folders"></div>
+            <div class="upper-folders" id='addfolder'><img src="add(1).svg" alt="" height="25px"></div>
             <div class="upper-notes"><img src="add.svg" alt="" height="25px"  onclick="writeNote()"></div>
             <div id='del' class="upper-note"><img onclick="del()" src="trash.svg" alt="" height="23px"></div>
         </div>
@@ -21,12 +21,11 @@
                 </div>
                 
                
-               <div class="addfolder" id='addfolder'><img src="add(1).svg" alt="" height="25px"></div>
             </div> 
             <div class="notes" id='notes'>
                 
             </div>
-            <div class="notetext" id='notetext'>
+            <div class="notetext" id='notetext'  contenteditable="true">
                 
             </div>
         </div>

@@ -52,8 +52,8 @@ body{
     border-right: 1px solid pink;
     overflow-y: hidden;
     position: relative; 
-    display: grid;
-    grid-template-rows: auto 30px;
+    /*display: grid;
+    grid-template-rows: auto 30px;*/
 }
 .folder-cases{
     overflow-y: scroll;

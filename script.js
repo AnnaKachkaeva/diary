@@ -1,4 +1,4 @@
-function foo(){
+function foo(){//chande width and height of app
     let b = document.getElementById('main-field').height;
     document.getElementById('folders').style.height = (b - 30) +'px';
     document.getElementById('notes').style.height = (b - 30) +'px';
@@ -60,7 +60,8 @@ function foo2(){//adding folder
     
     let addfolder = document.getElementById('addfolder');
     addfolder.addEventListener('click', function(){
-        console.log(folders);
+        console.log(JSON.stringify(folders));
+        //console.log(folders);
         let newfold = new Object();
         newfold.name = 'folder' + folders.length;
         newfold.notes = {};
@@ -111,7 +112,7 @@ function foo3(){//track clicks on folders
     });
 }
 
-function del(){
+function del(){//delete element whitch was clicked
     if(clickedNote){
         let notename = clickedNote.textContent;
         let foldername = clicked.textContent;
@@ -169,6 +170,21 @@ function writeNote(){
 }
 
 
+/*function save(){
+    fs.writeFile(
+        'accounts.json',
+        JSON.stringify(allusers),
+        (err) => {
+          if (err) {
+            reject(err)
+          } else {
+            resolve()
+          }
+        }
+      )
+}*/
+
+
 
 
 
@@ -178,8 +194,9 @@ function writeNote(){
 
 const folders = [];
 
-/*
-const folder = {
+
+
+/*const folder = {
     name : 'folder',
     notes: {
         1: {
@@ -262,7 +279,7 @@ const folder2 = {
             text: noteText
         }
     }
-};*/
+};
 
 
 /*const reportWindowSize = function(){
