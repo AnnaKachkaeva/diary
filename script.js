@@ -26,6 +26,7 @@ function addnotes(folder){
 }
 
 var clickedNote;
+var clickedNoteBackground;
 function showText(){//track clicks on notes
     document.addEventListener('dblclick', function (e) {
         if(e.target.className=='note-case'){
@@ -34,6 +35,7 @@ function showText(){//track clicks on notes
             }
             e.target.style.background = 'rgb(219, 218, 218)';
             clickedNote = e.target;
+            clickedNoteBackground = clickedNote.style.background;
             document.getElementById('notetext').innerHTML = '';
 
             for(let i =0; i< folders.length; i++ ){
@@ -88,6 +90,7 @@ function foo2(){//adding folder
 
 
 var clicked;
+var clickedBackground;
 function foo3(){//track clicks on folders
     document.addEventListener('dblclick', function (e) {
         if(e.target.className=='folder-case'){
@@ -96,6 +99,7 @@ function foo3(){//track clicks on folders
             }
             e.target.style.background = 'rgb(219, 218, 218)';
             clicked = e.target;
+            clickedBackground = clicked.style.background;
             document.getElementById('notes').innerHTML = '';
             let foldername = e.target.textContent;
             for(let i =0; i< folders.length; i++ ){
@@ -116,8 +120,10 @@ function del(){//delete element whitch was clicked
     if(clickedNote){
         let notename = clickedNote.textContent;
         let foldername = clicked.textContent;
+        
+        console.log(clickedNote.style.background)
 
-        if(clickedNote.style.background == 'rgb(219, 218, 218) none repeat scroll 0% 0%'){
+        if(clickedNote.style.background == clickedNoteBackground){
                 for(let i =0; i< folders.length; i++ ){
                     if(foldername==folders[i].name){
                         for (const property in folders[i].notes) {
@@ -134,7 +140,7 @@ function del(){//delete element whitch was clicked
         
 
     }   
-    if(clicked.style.background == 'rgb(219, 218, 218) none repeat scroll 0% 0%'){
+    if(clicked.style.background == clickedBackground){
         clicked.remove();
         document.getElementById('notes').innerHTML = '';
         document.getElementById('notetext').innerHTML = '';
