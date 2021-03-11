@@ -49,9 +49,9 @@ body{
 }
 .folders{
     text-align: center;
-    border-right: 1px solid pink;
+    border-right: 1px solid black;
     overflow-y: hidden;
-    position: relative; 
+    position: relative;
     /*display: grid;
     grid-template-rows: auto 30px;*/
 }
@@ -59,12 +59,12 @@ body{
     overflow-y: scroll;
 }
 .folder-case{
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
     text-align: center;
     height: 25px;
     line-height: 25px;
-    border-bottom: 1px dashed gray;
+    border-bottom: 1px gray;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -81,9 +81,9 @@ body{
 }
 .notes{
     text-align: center;
-    border-right: 1px solid pink;
+    border-right: 1px solid black;
     overflow: auto;
-    position: relative; 
+    position: relative;
 }
 .notetext{
     text-align: center;
@@ -91,12 +91,12 @@ body{
     position: relative;
 }
 .note-case{
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
     text-align: center;
     height: 25px;
     line-height: 25px;
-    border-bottom: 1px dashed gray;
+    border-bottom: 1px gray;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;

@@ -13,7 +13,7 @@ function foo(){//chande width and height of app
 function addFolder(foldername){
     let newfolder = document.createElement('div');
     newfolder.className = 'folder-case';
-    newfolder.textContent = foldername;
+    newfolder.textContent = foldername
     document.getElementById('folder-cases').appendChild(newfolder);
 }
 function addnotes(folder){
@@ -28,7 +28,7 @@ function addnotes(folder){
 var clickedNote;
 var clickedNoteBackground;
 function showText(){//track clicks on notes
-    document.addEventListener('dblclick', function (e) {
+    document.addEventListener('click', function (e) {
         if(e.target.className=='note-case'){
             if(clickedNote){
                 clickedNote.style.background = 'white';
@@ -48,7 +48,7 @@ function showText(){//track clicks on notes
                             text.innerHTML = selectedFolder.notes[property].text;
                             document.getElementById('notetext').appendChild(text);
                         }
-                        
+
                     }
                 }
             }
@@ -59,7 +59,7 @@ function showText(){//track clicks on notes
 }
 
 function foo2(){//adding folder
-    
+
     let addfolder = document.getElementById('addfolder');
     addfolder.addEventListener('click', function(){
         console.log(JSON.stringify(folders));
@@ -78,12 +78,12 @@ function foo2(){//adding folder
 
 
 
-        
+
         let newfolder = document.createElement('div');
         newfolder.className = 'folder-case';
         newfolder.textContent = 'folder' + (folders.length - 1);
         document.getElementById('folder-cases').appendChild(newfolder);
-        
+
         folders[folders.length-1].name = newfolder.textContent;
     });
 }
@@ -92,7 +92,7 @@ function foo2(){//adding folder
 var clicked;
 var clickedBackground;
 function foo3(){//track clicks on folders
-    document.addEventListener('dblclick', function (e) {
+    document.addEventListener('click', function (e) {
         if(e.target.className=='folder-case'){
             if(clicked){
                 clicked.style.background = 'white';
@@ -120,7 +120,7 @@ function del(){//delete element whitch was clicked
     if(clickedNote){
         let notename = clickedNote.textContent;
         let foldername = clicked.textContent;
-        
+
         console.log(clickedNote.style.background)
 
         if(clickedNote.style.background == clickedNoteBackground){
@@ -132,14 +132,14 @@ function del(){//delete element whitch was clicked
                                 delete folders[i].notes[property];
                                 document.getElementById('notetext').innerHTML = '';
                             }
-                           
+
                         }
                     }
             }
         }
-        
 
-    }   
+
+    }
     if(clicked.style.background == clickedBackground){
         clicked.remove();
         document.getElementById('notes').innerHTML = '';
@@ -152,25 +152,25 @@ function del(){//delete element whitch was clicked
             }
         }
     }
-    
+
 }
 
 
 function writeNote(){
-    
+
     for(let i = 0; i<folders.length; i++){
-        
+
         if(clicked.textContent == folders[i].name){
             console.log(folders[i]);
-            
+
             let notename = `f${i}-note${Object.keys(folders[i].notes).length}`;
             folders[i].addNote(notename,'note text');
-            
+
             let newnote = document.createElement('div');
             newnote.className = 'note-case';
             newnote.textContent = notename;
             document.getElementById('notes').appendChild(newnote);
-           
+
         }
     }
 }
