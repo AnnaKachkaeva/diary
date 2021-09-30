@@ -1,0 +1,26 @@
+<body onload="foo(), addFolder(), foo3(), showText(), changeText()" id="body">
+    <div class="main-field" id='main-field'>
+        <div class="header">
+            <div class="upper-folders" id='addfolder'><img src="/images/add(1).svg" alt="#" height="25px"></div>
+            <div class="upper-notes"><img src="/images/add.svg" alt="#" height="25px"  onclick="writeNote()"></div>
+            <div id='del' class="upper-note"><img onclick="toTextDiv()" src="/images/floppy-disk.png" method="post" action="/save" alt="#" height="23px" align=left><img onclick="del()" src="/images/trash.svg" alt="#" height="23px"></div>
+        </div>
+
+        <div class="columns" id="columns">
+            <div id='folders' class="folders">
+                <div class="folder-cases" id='folder-cases'>
+                </div>
+<!--onmousedown="Rclick(event)"--> 
+
+               <!--<div class="addfolder" id='addfolder'></div>-->
+            </div>
+            <div class="notes" id='notes'>
+
+            </div>
+            <div class="notetext" id='notetext'>
+
+            </div>
+        </div>
+    </div>
+
+</body>

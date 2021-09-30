@@ -1,0 +1,23 @@
+{
+  "name": "good-diary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "docs:app": "documentation serve app.js",
+    "docs:script": "documentation serve public/scripts/script.js"
+  },
+  "author": "Ulitka_Li",
+  "license": "ISC",
+  "devDependencies": {
+    "express-handlebars": "^5.2.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.12.0",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "documentation": "^13.2.0",
+    "express": "^4.17.1"
+  }
+}

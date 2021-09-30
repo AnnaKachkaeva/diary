@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-around;
+    min-width: 580px;
+}
+
+.main-field{
+    margin-top: 4vh;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    min-width: 580px;
+    grid-template-rows: 30px auto;
+}
+.header{
+    padding-top: 2px;
+    background-color:white;
+    border-bottom: 1px solid gray;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    display: grid;
+    grid-template-columns: 180px 180px minmax(220px,auto);
+    grid-template-areas: 'upper-folders upper-notes upper-note';
+}
+.upper-folders{
+    text-align: center;
+    grid-area: upper-folders;
+}
+.upper-notes{
+    text-align: center;
+    grid-area: upper-notes;
+}
+.upper-note{
+    padding-right: 3px;
+    padding-left: 6px;
+    text-align: right;
+    height: 30px;
+    grid-area: upper-note;
+}
+.columns{
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 180px 180px minmax(220px,auto);
+    height: 100%;
+}
+.folders{
+    text-align: center;
+    border-right: 1px solid gray;
+    overflow-y: hidden;
+    position: relative;
+    /*display: grid;
+    grid-template-rows: auto 30px;*/
+}
+.folder-cases{
+    overflow-y: hidden;
+}
+.folder-case{
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid gray;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.addfolder{
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid gray;
+    width: 100%;
+    padding-top: 4px;
+    border-bottom-left-radius: 6px;
+}
+.notes{
+    text-align: center;
+    border-right: 1px solid gray;
+    overflow: auto;
+    position: relative;
+}
+.notetext{
+    text-align: center;
+    /* overflow: auto; */
+    position: relative;
+    padding: 0 10px 0 10px;
+    word-wrap:break-word;
+}
+textarea{
+    outline: none;
+    resize: none;
+}
+.text{
+    text-align: center;
+    /* overflow: auto; */
+    position: relative;
+    padding: 0 10px 0 10px;
+    word-wrap:break-word;
+    columns: 200;
+
+}
+.note-case{
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid gray;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
